@@ -30,14 +30,14 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
-
+ 
 /* LANGUAGE */
 [data-lang], [data-lang-inline] { display: none; }
 .en [data-lang="en"]         { display: block; }
 .es [data-lang="es"]         { display: block; }
 .en [data-lang-inline="en"]  { display: inline; }
 .es [data-lang-inline="es"]  { display: inline; }
-
+ 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -69,7 +69,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
   padding: 4px 12px; border-radius: 16px; background: transparent; color: var(--blue); transition: all 0.2s;
 }
 .lang-switch button.active { background: var(--blue); color: white; }
-
+ 
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -123,7 +123,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .hero-langs { margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .lang-tag { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
 .lang-tag strong { font-weight: 500; color: rgba(255,255,255,0.8); }
-
+ 
 /* PHOTO */
 .hero-photo-col { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 0 4rem 3rem; }
 .photo-frame { position: relative; width: 320px; height: 390px; }
@@ -160,7 +160,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 }
 .badge2-num { font-family:'Cormorant Garant',serif; font-size:1.5rem; color:white; font-weight:400; line-height:1; }
 .badge2-lbl { font-size:0.65rem; color:rgba(255,255,255,0.7); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px; }
-
+ 
 /* SECTIONS */
 .wrap { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
 .bg-white { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -168,7 +168,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .sec-label { font-size:0.68rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--blue); margin-bottom:0.6rem; }
 .sec-title { font-family:'Cormorant Garant',serif; font-size:clamp(1.8rem,3vw,2.8rem); font-weight:400; line-height:1.2; color:var(--navy); }
 .sec-bar { width:36px; height:2px; background:linear-gradient(90deg,var(--blue),#93C5FD); margin:1.2rem 0 3rem; border-radius:2px; }
-
+ 
 /* ABOUT */
 .about-grid { display:grid; grid-template-columns:1.3fr 1fr; gap:5rem; align-items:start; }
 .about-text p { color:var(--muted); margin-bottom:1.1rem; font-size:0.97rem; }
@@ -178,7 +178,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .stat:first-child { grid-column:span 2; }
 .stat-val { font-family:'Cormorant Garant',serif; font-size:1.8rem; color:var(--navy); font-weight:400; }
 .stat-lbl { font-size:0.85rem; color:var(--muted); margin-top:2px; }
-
+ 
 /* WRITING */
 .writing-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
 .card {
@@ -197,7 +197,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .card-title { font-family:'Cormorant Garant',serif; font-size:1.2rem; font-weight:400; color:var(--navy); line-height:1.45; margin-bottom:0.7rem; }
 .card-excerpt { font-size:0.86rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:1rem; }
 .card-meta { font-size:0.72rem; color:var(--faint); padding-top:0.75rem; border-top:1px solid var(--border); }
-
+ 
 /* DESIGN */
 .design-intro { font-size:0.96rem; color:var(--muted); line-height:1.85; max-width:560px; margin-bottom:2rem; }
 .tools { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:2.5rem; }
@@ -213,7 +213,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .ditem-cat { font-size:0.62rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--blue); margin-bottom:0.4rem; }
 .ditem-name { font-family:'Cormorant Garant',serif; font-size:0.9rem; font-style:italic; color:var(--muted); }
 .ditem-icon { font-size:1.4rem; margin-bottom:0.6rem; opacity:0.22; }
-
+ 
 /* EXPERIENCE */
 .exp-list { display:flex; flex-direction:column; }
 .exp {
@@ -227,7 +227,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .exp-role { font-family:'Cormorant Garant',serif; font-size:1.15rem; font-weight:400; color:var(--navy); margin-bottom:0.2rem; }
 .exp-org { font-size:0.75rem; font-weight:500; color:var(--blue); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.5rem; }
 .exp-desc { font-size:0.86rem; color:var(--muted); line-height:1.75; }
-
+ 
 /* CONTACT */
 .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
 .contact-text { font-size:0.97rem; color:var(--muted); line-height:1.9; }
@@ -241,10 +241,10 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .cico { width:38px; height:38px; border-radius:50%; background:var(--sky); color:var(--blue); display:flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:600; flex-shrink:0; }
 .clbl { font-size:0.65rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--blue); display:block; margin-bottom:1px; }
 .cval { font-size:0.86rem; color:var(--muted); }
-
+ 
 /* FOOTER */
 footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex; align-items:center; justify-content:space-between; font-size:0.75rem; color:var(--faint); background:white; }
-
+ 
 /* ANIMATIONS */
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 .hero-pill    { animation:fadeUp 0.5s 0.1s both; }
@@ -253,7 +253,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
 .hero-cta     { animation:fadeUp 0.5s 0.4s both; }
 .hero-langs   { animation:fadeUp 0.5s 0.5s both; }
 .photo-frame  { animation:fadeUp 0.6s 0.3s both; }
-
+ 
 /* GALLERY */
 .gallery-heading {
   font-family: 'Cormorant Garant', serif;
@@ -287,7 +287,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
 .cert-icon { font-size: 1.5rem; opacity: 0.2; }
 .ph-label { font-size: 0.75rem; color: var(--faint); font-weight: 400; }
 .ph-hint { font-size: 0.65rem; color: var(--faint); opacity: 0.6; font-family: monospace; }
-
+ 
 /* RESPONSIVE addl */
 @media(max-width:900px){
   .gallery-grid { grid-template-columns: repeat(2,1fr); }
@@ -309,7 +309,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
 </style>
 </head>
 <body class="en">
-
+ 
 <nav id="nav">
   <a class="nav-logo" href="#"><img src="logo-ka.png" alt="KA" style="height:32px;width:auto;display:block;filter:brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(800%) hue-rotate(190deg) brightness(60%);"></a>
   <div class="nav-right">
@@ -326,7 +326,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     </div>
   </div>
 </nav>
-
+ 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-grid"></div>
@@ -373,7 +373,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     </div>
   </div>
 </div>
-
+ 
 <!-- ABOUT -->
 <div id="about" class="bg-white">
 <div class="wrap">
@@ -410,7 +410,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
   </div>
 </div>
 </div>
-
+ 
 <!-- WRITING -->
 <div class="wrap" id="writing">
   <p class="sec-label"><span data-lang-inline="en">Writing & Research</span><span data-lang-inline="es">Escritura e Investigación</span></p>
@@ -443,7 +443,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     </a>
   </div>
 </div>
-
+ 
 <!-- DESIGN -->
 <div id="design" class="bg-white">
 <div class="wrap">
@@ -460,7 +460,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     <div class="ditem"><div class="ditem-icon">◈</div><p class="ditem-cat">WikiPUCP</p><p class="ditem-name"><span data-lang-inline="en">Event design & outreach</span><span data-lang-inline="es">Diseño de evento y difusión</span></p></div>
     <div class="ditem"><div class="ditem-icon">⊡</div><p class="ditem-cat">Web</p><p class="ditem-name">WordPress · GitHub Pages</p></div>
   </div>
-
+ 
   <h3 class="gallery-heading"><span data-lang-inline="en">Projects & field experience</span><span data-lang-inline="es">Proyectos y experiencia de campo</span></h3>
   <div class="gallery-grid" id="project-gallery">
     <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
@@ -468,7 +468,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
     <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
   </div>
-
+ 
   <h3 class="gallery-heading"><span data-lang-inline="en">Certifications & credentials</span><span data-lang-inline="es">Certificados y credenciales</span></h3>
   <div class="cert-grid">
     <div class="cert-item ph"><div class="cert-icon">&#127881;</div><p class="ph-label"><span data-lang-inline="en">Add certificate</span><span data-lang-inline="es">Añade certificado</span></p><p class="ph-hint">img src="cert.jpg"</p></div>
@@ -477,7 +477,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
   </div>
 </div>
 </div>
-
+ 
 <!-- EXPERIENCE -->
 <div class="wrap" id="experience">
   <p class="sec-label"><span data-lang-inline="en">Experience</span><span data-lang-inline="es">Experiencia</span></p>
@@ -495,7 +495,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     <div class="exp"><div class="exp-date">2021</div><div><p class="exp-role"><span data-lang-inline="en">Summer School — EU Policy</span><span data-lang-inline="es">Summer School — Política de la UE</span></p><p class="exp-org">Ludwig Maximilian Universität München · Germany</p><p class="exp-desc"><span data-lang-inline="en">Full scholarship. Programme on the European Union, its institutions and future projections.</span><span data-lang-inline="es">Beca completa. Programa sobre la Unión Europea, sus instituciones y proyecciones futuras.</span></p></div></div>
   </div>
 </div>
-
+ 
 <!-- CONTACT -->
 <div id="contact" class="bg-white">
 <div class="wrap">
@@ -528,14 +528,24 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
   </div>
 </div>
 </div>
-
+ 
 <footer>
   <span>Karen Arévalo Calle · Lima, Perú</span>
   <span><span data-lang-inline="en">International Relations · Digital Rights</span><span data-lang-inline="es">Relaciones Internacionales · Derechos Digitales</span></span>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+ 
+<script>
 function setLang(lang) {
   document.body.className = lang;
   document.querySelectorAll('.lang-switch button').forEach(b => {
-    b.classList.toggle('
+    b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang);
+  });
+  document.documentElement.lang = lang;
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+setLang('en');
+</script>
+</body>
+</html>
