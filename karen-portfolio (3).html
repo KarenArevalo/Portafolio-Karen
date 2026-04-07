@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karen Arévalo Calle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:  #0B1D3E;
+  --navy2: #162952;
+  --blue:  #1A56DB;
+  --blue2: #2563EB;
+  --sky:   #EFF6FF;
+  --sky2:  #DBEAFE;
+  --fog:   #F5F7FF;
+  --white: #FFFFFF;
+  --ink:   #0F172A;
+  --muted: #4B6080;
+  --faint: #94A3B8;
+  --border: rgba(26,86,219,0.12);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: var(--fog);
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* LANGUAGE */
+[data-lang], [data-lang-inline] { display: none; }
+.en [data-lang="en"]         { display: block; }
+.es [data-lang="es"]         { display: block; }
+.en [data-lang-inline="en"]  { display: inline; }
+.es [data-lang-inline="es"]  { display: inline; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 4rem; height: 64px;
+  background: rgba(245,247,255,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
+.nav-logo { font-family: "Cormorant Garant", serif; font-size: 1.08rem; color: var(--navy); text-decoration: none; letter-spacing: 0.02em; }
+.nav-right { display: flex; align-items: center; gap: 2.5rem; }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a {
+  font-size: 0.85rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; transition: color 0.2s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1.5px; background: var(--blue); transform: scaleX(0); transition: transform 0.25s ease;
+}
+.nav-links a:hover { color: var(--blue); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.lang-switch { display: flex; gap: 2px; background: var(--sky2); border-radius: 20px; padding: 2px; }
+.lang-switch button {
+  border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 16px; background: transparent; color: var(--blue); transition: all 0.2s;
+}
+.lang-switch button.active { background: var(--blue); color: white; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 55%, #1E3A8A 100%);
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; padding: 0 4rem; padding-top: 64px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 40%, rgba(37,99,235,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(96,165,250,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size: 60px 60px; pointer-events: none;
+}
+.hero-text { position: relative; z-index: 1; padding: 4rem 0; }
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px; padding: 6px 16px;
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.75); margin-bottom: 1.5rem;
+}
+.pill-dot { width:6px; height:6px; border-radius:50%; background:#60A5FA; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero-name {
+  font-family: "Cormorant Garant", serif; font-size: clamp(2.6rem,4.5vw,4rem);
+  font-weight: 400; line-height: 1.1; color: white; margin-bottom: 1.5rem;
+}
+.hero-name em { font-style: italic; color: #93C5FD; }
+.hero-tagline { font-size: 1.08rem; color: rgba(255,255,255,0.65); max-width: 440px; line-height: 1.9; margin-bottom: 2.5rem; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  display: inline-block; background: var(--blue2); color: white;
+  padding: 0.75rem 2rem; border-radius: 4px; text-decoration: none;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #1D4ED8; transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-block; color: rgba(255,255,255,0.7); padding: 0.75rem 0;
+  text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.3); transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: white; border-color: white; }
+.hero-langs { margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.lang-tag { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
+.lang-tag strong { font-weight: 500; color: rgba(255,255,255,0.8); }
+
+/* PHOTO */
+.hero-photo-col { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 0 4rem 3rem; }
+.photo-frame { position: relative; width: 320px; height: 390px; }
+.photo-frame::before {
+  content: ''; position: absolute; top: -16px; left: -16px; width: 100%; height: 100%;
+  border: 1.5px solid rgba(96,165,250,0.3); border-radius: 8px;
+}
+.photo-frame::after {
+  content: ''; position: absolute; bottom: -16px; right: -16px; width: 60%; height: 60%;
+  border: 1.5px solid rgba(255,255,255,0.1); border-radius: 8px;
+}
+.photo-inner {
+  width: 100%; height: 100%; border-radius: 6px; overflow: hidden;
+  background: linear-gradient(160deg, #1E3A8A 0%, #1A56DB 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.photo-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-ph-icon { width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:rgba(255,255,255,0.3); }
+.photo-ph-text { font-size:0.72rem; color:rgba(255,255,255,0.35); letter-spacing:0.06em; text-align:center; padding:0 2rem; line-height:1.6; }
+.badge {
+  position: absolute; bottom: 24px; left: -28px;
+  background: white; border-radius: 8px; padding: 10px 14px;
+  box-shadow: 0 8px 32px rgba(11,29,62,0.2);
+  display: flex; align-items: center; gap: 10px;
+}
+.badge-ico { width:32px; height:32px; border-radius:50%; background:var(--sky); display:flex; align-items:center; justify-content:center; font-size:0.68rem; color:var(--blue); font-weight:600; flex-shrink:0; }
+.badge-title { font-weight:500; color:var(--ink); font-size:0.75rem; display:block; }
+.badge-sub { color:var(--muted); font-size:0.68rem; display:block; }
+.badge2 {
+  position: absolute; top: 24px; right: -28px;
+  background: var(--blue); border-radius: 8px; padding: 10px 16px;
+  box-shadow: 0 8px 32px rgba(26,86,219,0.3);
+}
+.badge2-num { font-family:'Cormorant Garant',serif; font-size:1.5rem; color:white; font-weight:400; line-height:1; }
+.badge2-lbl { font-size:0.65rem; color:rgba(255,255,255,0.7); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px; }
+
+/* SECTIONS */
+.wrap { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
+.bg-white { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.bg-white .wrap { padding: 5rem 4rem; }
+.sec-label { font-size:0.68rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--blue); margin-bottom:0.6rem; }
+.sec-title { font-family:'Cormorant Garant',serif; font-size:clamp(1.8rem,3vw,2.8rem); font-weight:400; line-height:1.2; color:var(--navy); }
+.sec-bar { width:36px; height:2px; background:linear-gradient(90deg,var(--blue),#93C5FD); margin:1.2rem 0 3rem; border-radius:2px; }
+
+/* ABOUT */
+.about-grid { display:grid; grid-template-columns:1.3fr 1fr; gap:5rem; align-items:start; }
+.about-text p { color:var(--muted); margin-bottom:1.1rem; font-size:0.97rem; }
+.stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.stat { background:var(--sky); border:1px solid var(--sky2); border-radius:10px; padding:1.1rem 1.25rem; transition:transform 0.2s,box-shadow 0.2s; }
+.stat:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(26,86,219,0.1); }
+.stat:first-child { grid-column:span 2; }
+.stat-val { font-family:'Cormorant Garant',serif; font-size:1.8rem; color:var(--navy); font-weight:400; }
+.stat-lbl { font-size:0.85rem; color:var(--muted); margin-top:2px; }
+
+/* WRITING */
+.writing-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
+.card {
+  background:white; border:1px solid var(--border); border-radius:10px; padding:1.75rem;
+  text-decoration:none; color:inherit; transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;
+  display:flex; flex-direction:column; position:relative; overflow:hidden;
+}
+.card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--blue),#93C5FD);
+  transform:scaleX(0); transform-origin:left; transition:transform 0.3s ease;
+}
+.card:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(26,86,219,0.1); border-color:var(--sky2); }
+.card:hover::before { transform:scaleX(1); }
+.card-tag { font-size:0.65rem; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:0.75rem; }
+.card-title { font-family:'Cormorant Garant',serif; font-size:1.2rem; font-weight:400; color:var(--navy); line-height:1.45; margin-bottom:0.7rem; }
+.card-excerpt { font-size:0.86rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:1rem; }
+.card-meta { font-size:0.72rem; color:var(--faint); padding-top:0.75rem; border-top:1px solid var(--border); }
+
+/* DESIGN */
+.design-intro { font-size:0.96rem; color:var(--muted); line-height:1.85; max-width:560px; margin-bottom:2rem; }
+.tools { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:2.5rem; }
+.chip { background:var(--sky); color:var(--blue); border:1px solid var(--sky2); border-radius:20px; padding:5px 14px; font-size:0.75rem; font-weight:500; transition:background 0.2s; }
+.chip:hover { background:var(--sky2); }
+.design-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.ditem {
+  aspect-ratio:4/3; background:var(--fog); border:1px solid var(--border); border-radius:10px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:1.5rem;
+  transition:background 0.2s,transform 0.2s,border-color 0.2s;
+}
+.ditem:hover { background:var(--sky); border-color:var(--sky2); transform:translateY(-2px); }
+.ditem-cat { font-size:0.62rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--blue); margin-bottom:0.4rem; }
+.ditem-name { font-family:'Cormorant Garant',serif; font-size:0.9rem; font-style:italic; color:var(--muted); }
+.ditem-icon { font-size:1.4rem; margin-bottom:0.6rem; opacity:0.22; }
+
+/* EXPERIENCE */
+.exp-list { display:flex; flex-direction:column; }
+.exp {
+  display:grid; grid-template-columns:130px 1fr; gap:2rem; padding:1.75rem 1rem;
+  border-top:1px solid var(--border); border-radius:6px;
+  transition:background 0.15s;
+}
+.exp:last-child { border-bottom:1px solid var(--border); }
+.exp:hover { background:var(--sky); }
+.exp-date { font-size:0.75rem; color:var(--blue); letter-spacing:0.04em; padding-top:0.2rem; }
+.exp-role { font-family:'Cormorant Garant',serif; font-size:1.15rem; font-weight:400; color:var(--navy); margin-bottom:0.2rem; }
+.exp-org { font-size:0.75rem; font-weight:500; color:var(--blue); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.5rem; }
+.exp-desc { font-size:0.86rem; color:var(--muted); line-height:1.75; }
+
+/* CONTACT */
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+.contact-text { font-size:0.97rem; color:var(--muted); line-height:1.9; }
+.contact-items { display:flex; flex-direction:column; gap:10px; }
+.citem {
+  display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit;
+  padding:1rem 1.25rem; border:1px solid var(--border); border-radius:10px; background:white;
+  transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s;
+}
+.citem:hover { border-color:var(--sky2); box-shadow:0 4px 20px rgba(26,86,219,0.08); transform:translateX(4px); }
+.cico { width:38px; height:38px; border-radius:50%; background:var(--sky); color:var(--blue); display:flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:600; flex-shrink:0; }
+.clbl { font-size:0.65rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--blue); display:block; margin-bottom:1px; }
+.cval { font-size:0.86rem; color:var(--muted); }
+
+/* FOOTER */
+footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex; align-items:center; justify-content:space-between; font-size:0.75rem; color:var(--faint); background:white; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+.hero-pill    { animation:fadeUp 0.5s 0.1s both; }
+.hero-name    { animation:fadeUp 0.5s 0.2s both; }
+.hero-tagline { animation:fadeUp 0.5s 0.3s both; }
+.hero-cta     { animation:fadeUp 0.5s 0.4s both; }
+.hero-langs   { animation:fadeUp 0.5s 0.5s both; }
+.photo-frame  { animation:fadeUp 0.6s 0.3s both; }
+
+/* GALLERY */
+.gallery-heading {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 1.3rem; font-weight: 400;
+  color: var(--navy); margin: 3rem 0 1.25rem;
+  letter-spacing: 0.01em;
+}
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;
+}
+.cert-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+.gallery-item {
+  aspect-ratio: 4/3; border-radius: 8px; overflow: hidden;
+  border: 1px solid var(--border); background: var(--fog);
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.gallery-item:hover img { transform: scale(1.04); }
+.cert-item {
+  aspect-ratio: 3/2; border-radius: 8px; overflow: hidden;
+  border: 1px solid var(--border); background: var(--fog);
+}
+.cert-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.cert-item:hover img { transform: scale(1.04); }
+.ph {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 6px; padding: 1rem;
+}
+.ph-icon { font-size: 1.5rem; opacity: 0.2; }
+.cert-icon { font-size: 1.5rem; opacity: 0.2; }
+.ph-label { font-size: 0.75rem; color: var(--faint); font-weight: 400; }
+.ph-hint { font-size: 0.65rem; color: var(--faint); opacity: 0.6; font-family: monospace; }
+
+/* RESPONSIVE addl */
+@media(max-width:900px){
+  .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .cert-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:900px){
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:5rem 1.5rem 3rem;}
+  .hero-photo-col{display:none;}
+  .wrap,.bg-white .wrap{padding:4rem 1.5rem;}
+  .about-grid{grid-template-columns:1fr;gap:2rem;}
+  .writing-grid{grid-template-columns:1fr;}
+  .design-grid{grid-template-columns:repeat(2,1fr);}
+  .exp{grid-template-columns:1fr;gap:0.4rem;}
+  .contact-grid{grid-template-columns:1fr;gap:2rem;}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}
+}
+</style>
+</head>
+<body class="en">
+
+<nav id="nav">
+  <a class="nav-logo" href="#"><img src="logo-ka.png" alt="KA" style="height:32px;width:auto;display:block;filter:brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(800%) hue-rotate(190deg) brightness(60%);"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about"><span data-lang-inline="en">About</span><span data-lang-inline="es">Sobre mí</span></a></li>
+      <li><a href="#writing"><span data-lang-inline="en">Writing</span><span data-lang-inline="es">Escritura</span></a></li>
+      <li><a href="#design"><span data-lang-inline="en">Design</span><span data-lang-inline="es">Diseño</span></a></li>
+      <li><a href="#experience"><span data-lang-inline="en">Experience</span><span data-lang-inline="es">Experiencia</span></a></li>
+      <li><a href="#contact"><span data-lang-inline="en">Contact</span><span data-lang-inline="es">Contacto</span></a></li>
+    </ul>
+    <div class="lang-switch">
+      <button onclick="setLang('en')" class="active">EN</button>
+      <button onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-text">
+    <div class="hero-pill">
+      <span class="pill-dot"></span>
+      <span data-lang-inline="en">IR · Digital Rights · Gender Equity</span>
+      <span data-lang-inline="es">RRII · Derechos Digitales · Equidad de Género</span>
+    </div>
+    <h1 class="hero-name">Karen<br>Arévalo <em>Calle</em></h1>
+    <p class="hero-tagline">
+      <span data-lang-inline="en">Researcher, communicator, and policy professional working at the intersection of digital rights, multilateral affairs, and social equity — with roots in Pucallpa and a gaze toward the Global South.</span>
+      <span data-lang-inline="es">Investigadora, comunicadora y profesional de políticas en la intersección de los derechos digitales, los asuntos multilaterales y la equidad social — con raíces en Pucallpa y la mirada puesta en el Sur Global.</span>
+    </p>
+    <div class="hero-cta">
+      <a href="#writing" class="btn-primary"><span data-lang-inline="en">Explore my work</span><span data-lang-inline="es">Ver mi trabajo</span></a>
+      <a href="#contact" class="btn-ghost"><span data-lang-inline="en">Get in touch</span><span data-lang-inline="es">Escríbeme</span></a>
+    </div>
+    <div class="hero-langs">
+      <span class="lang-tag"><strong>ES</strong> Native</span>
+      <span class="lang-tag"><strong>EN</strong> Advanced</span>
+      <span class="lang-tag"><strong>PT</strong> Advanced</span>
+      <span class="lang-tag"><strong>FR</strong> Intermediate</span>
+    </div>
+  </div>
+  <div class="hero-photo-col">
+    <div class="photo-frame">
+      <div class="photo-inner">
+        <!-- Para añadir tu foto: reemplaza este bloque con <img src="foto.jpg" alt="Karen Arévalo Calle"> -->
+        <div class="photo-ph-icon">&#9786;</div>
+        <p class="photo-ph-text">Añade tu foto aquí<br><span style="opacity:0.6;font-size:0.65rem;">img src="tu-foto.jpg"</span></p>
+      </div>
+      <div class="badge">
+        <div class="badge-ico">OEA</div>
+        <div>
+          <span class="badge-title"><span data-lang-inline="en">Youth Delegate</span><span data-lang-inline="es">Delegada Juvenil</span></span>
+          <span class="badge-sub">OAS General Assembly · 2022</span>
+        </div>
+      </div>
+      <div class="badge2">
+        <div class="badge2-num">4+</div>
+        <div class="badge2-lbl"><span data-lang-inline="en">Languages</span><span data-lang-inline="es">Idiomas</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="bg-white">
+<div class="wrap">
+  <p class="sec-label"><span data-lang-inline="en">About me</span><span data-lang-inline="es">Sobre mí</span></p>
+  <h2 class="sec-title"><span data-lang-inline="en">Researcher, advocate,<br>communicator</span><span data-lang-inline="es">Investigadora, activista,<br>comunicadora</span></h2>
+  <div class="sec-bar"></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p data-lang="en">I am an International Relations graduate from PUCP (Pontificia Universidad Católica del Perú), where I graduated in the top third of my class as a Beca 18 scholarship recipient. My academic and professional formation spans digital rights research, institutional communications, gender equality advocacy, and multilateral engagement.</p>
+      <p data-lang="en">My work bridges policy analysis and strategic communications — from coordinating Wikipedia editing marathons to developing fundraising strategy for a scholarship foundation, from writing jurisprudence reports on digital regulation in Latin America to drafting corporate alliance frameworks.</p>
+      <p data-lang="en">I am drawn to problems at the intersection of technology, power, and equity: how AI reshapes global value chains, how freedom of expression is contested online, how Global South actors navigate multilateral institutions. I bring to this work a commitment to intellectual honesty, a preference for arguments over assertions, and a belief that good writing is itself a form of political action.</p>
+      <p data-lang="es">Soy internacionalista egresada de la PUCP (Pontificia Universidad Católica del Perú), graduada en el tercio superior como beneficiaria de la Beca 18. Mi formación abarca investigación en derechos digitales, comunicaciones institucionales, advocacy de igualdad de género y participación multilateral.</p>
+      <p data-lang="es">Mi trabajo conecta el análisis de políticas con las comunicaciones estratégicas: desde la coordinación de maratones de edición en Wikipedia hasta el desarrollo de estrategias de fundraising para una fundación de becas; desde informes de jurisprudencia sobre regulación digital hasta marcos de alianzas corporativas.</p>
+      <p data-lang="es">Me atraen los problemas en la intersección de tecnología, poder y equidad: cómo la IA reconfigura las cadenas de valor globales, cómo se disputa la libertad de expresión en línea, cómo los actores del Sur Global navegan las instituciones multilaterales. A este trabajo aporto honestidad intelectual, preferencia por los argumentos, y la convicción de que escribir bien es también una forma de acción política.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-val">PUCP</div>
+        <div class="stat-lbl"><span data-lang-inline="en">B.A. International Relations · Top third · 2025</span><span data-lang-inline="es">Lic. Ciencia Política · RRII · Tercio superior · 2025</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">Beca 18</div>
+        <div class="stat-lbl"><span data-lang-inline="en">Full national scholarship</span><span data-lang-inline="es">Beca nacional completa</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">350+</div>
+        <div class="stat-lbl">WikiPUCP &amp; Editatón PUCP</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">OEA</div>
+        <div class="stat-lbl"><span data-lang-inline="en">Youth Delegate 2022</span><span data-lang-inline="es">Delegada Juvenil 2022</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- WRITING -->
+<div class="wrap" id="writing">
+  <p class="sec-label"><span data-lang-inline="en">Writing & Research</span><span data-lang-inline="es">Escritura e Investigación</span></p>
+  <h2 class="sec-title"><span data-lang-inline="en">Articles, essays &<br>policy analysis</span><span data-lang-inline="es">Artículos, ensayos y<br>análisis de política</span></h2>
+  <div class="sec-bar"></div>
+  <div class="writing-grid">
+    <a href="#" class="card">
+      <p class="card-tag">Digital Rights · Blog · CELE</p>
+      <h3 class="card-title"><span data-lang-inline="en">The Biasi Case: Hate Speech and Political Criticism in the Platform Era</span><span data-lang-inline="es">El caso Biasi: discurso de odio y crítica política en la era de las plataformas</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Analysis of the Argentine Supreme Court ruling examining where political criticism ends and hate speech begins — and what it means for digital expression across Latin America.</span><span data-lang-inline="es">Análisis del fallo argentino que examina dónde termina la crítica política y comienza el discurso de odio, y sus implicancias para la expresión digital en América Latina.</span></p>
+      <p class="card-meta">Universidad de Palermo · CELE · 2025</p>
+    </a>
+    <a href="#" class="card">
+      <p class="card-tag"><span data-lang-inline="en">Electoral Politics · Policy Brief</span><span data-lang-inline="es">Política Electoral · Policy Brief</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Peru 2026: Democratic Fragility Without Collapse</span><span data-lang-inline="es">Perú 2026: Fragilidad Democrática Sin Colapso</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Peru represents a distinct regional pattern — formally intact institutions with no governing capacity. A comparative analysis using Ecuador and Bolivia as reference points.</span><span data-lang-inline="es">El Perú representa un patrón regional diferenciado: instituciones formalmente intactas con nula capacidad de gobierno. Análisis comparado con Ecuador y Bolivia.</span></p>
+      <p class="card-meta">2025–2026</p>
+    </a>
+    <a href="#" class="card">
+      <p class="card-tag"><span data-lang-inline="en">AI Governance · Undergraduate Thesis</span><span data-lang-inline="es">Gobernanza de IA · Tesis de Licenciatura</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Beyond Cold War 2.0: Competition, Cooperation & Coexistence in US-China AI Relations</span><span data-lang-inline="es">Más allá de la Guerra Fría 2.0: Competencia, Cooperación y Coexistencia en IA</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Against the Cold War framing of US-China tech rivalry, this thesis proposes an analytical triad that accounts for Global South agency and AI's reconfiguration of global value chains.</span><span data-lang-inline="es">Propone una tríada analítica frente al marco de Guerra Fría, incorporando la agencia del Sur Global y la reconfiguración de cadenas de valor por la IA.</span></p>
+      <p class="card-meta">PUCP · 2025</p>
+    </a>
+    <a href="#" class="card">
+      <p class="card-tag"><span data-lang-inline="en">Digital Regulation · Legislative Reports</span><span data-lang-inline="es">Regulación Digital · Informes Legislativos</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Digital Regulation in Latin America: Brazil, Colombia, Dominican Republic</span><span data-lang-inline="es">Regulación Digital en América Latina: Brasil, Colombia, República Dominicana</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Legislative and jurisprudence reports tracking platform liability, freedom of expression, and digital gender-based violence across the region.</span><span data-lang-inline="es">Informes sobre responsabilidad de plataformas, libertad de expresión y violencia digital de género en la región.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2024–2025</p>
+    </a>
+  </div>
+</div>
+
+<!-- DESIGN -->
+<div id="design" class="bg-white">
+<div class="wrap">
+  <p class="sec-label"><span data-lang-inline="en">Design, Projects & Certifications</span><span data-lang-inline="es">Diseño, Proyectos y Certificaciones</span></p>
+  <h2 class="sec-title"><span data-lang-inline="en">Visual work, field<br>experience & credentials</span><span data-lang-inline="es">Trabajo visual, experiencia<br>de campo y credenciales</span></h2>
+  <div class="sec-bar"></div>
+  <p class="design-intro"><span data-lang-inline="en">Social media content, institutional communications, and campaign materials for NGOs, foundations, and civil society organizations. Below you'll also find photos from key projects and certifications.</span><span data-lang-inline="es">Contenido para redes sociales, comunicaciones institucionales y materiales de campaña para ONG, fundaciones y organizaciones de sociedad civil. Aquí también encontrarás fotos de proyectos y certificados.</span></p>
+  <div class="tools">
+    <span class="chip">Canva</span><span class="chip">CapCut</span><span class="chip">Procreate</span><span class="chip">WordPress</span><span class="chip">MS Office</span>
+  </div>
+  <div class="design-grid">
+    <div class="ditem"><div class="ditem-icon">◈</div><p class="ditem-cat">Fundación Multitudes</p><p class="ditem-name"><span data-lang-inline="en">Social media & institutional</span><span data-lang-inline="es">Redes sociales e institucional</span></p></div>
+    <div class="ditem"><div class="ditem-icon">◈</div><p class="ditem-cat">AEG PUCP / Fiat Lux</p><p class="ditem-name"><span data-lang-inline="en">Campaigns & fundraising</span><span data-lang-inline="es">Campañas y fundraising</span></p></div>
+    <div class="ditem"><div class="ditem-icon">◈</div><p class="ditem-cat">WikiPUCP</p><p class="ditem-name"><span data-lang-inline="en">Event design & outreach</span><span data-lang-inline="es">Diseño de evento y difusión</span></p></div>
+    <div class="ditem"><div class="ditem-icon">⊡</div><p class="ditem-cat">Web</p><p class="ditem-name">WordPress · GitHub Pages</p></div>
+  </div>
+
+  <h3 class="gallery-heading"><span data-lang-inline="en">Projects & field experience</span><span data-lang-inline="es">Proyectos y experiencia de campo</span></h3>
+  <div class="gallery-grid" id="project-gallery">
+    <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
+    <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
+    <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
+    <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
+  </div>
+
+  <h3 class="gallery-heading"><span data-lang-inline="en">Certifications & credentials</span><span data-lang-inline="es">Certificados y credenciales</span></h3>
+  <div class="cert-grid">
+    <div class="cert-item ph"><div class="cert-icon">&#127881;</div><p class="ph-label"><span data-lang-inline="en">Add certificate</span><span data-lang-inline="es">Añade certificado</span></p><p class="ph-hint">img src="cert.jpg"</p></div>
+    <div class="cert-item ph"><div class="cert-icon">&#127881;</div><p class="ph-label"><span data-lang-inline="en">Add certificate</span><span data-lang-inline="es">Añade certificado</span></p><p class="ph-hint">img src="cert.jpg"</p></div>
+    <div class="cert-item ph"><div class="cert-icon">&#127881;</div><p class="ph-label"><span data-lang-inline="en">Add certificate</span><span data-lang-inline="es">Añade certificado</span></p><p class="ph-hint">img src="cert.jpg"</p></div>
+  </div>
+</div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="wrap" id="experience">
+  <p class="sec-label"><span data-lang-inline="en">Experience</span><span data-lang-inline="es">Experiencia</span></p>
+  <h2 class="sec-title"><span data-lang-inline="en">Selected positions &<br>engagements</span><span data-lang-inline="es">Posiciones y<br>compromisos</span></h2>
+  <div class="sec-bar"></div>
+  <div class="exp-list">
+    <div class="exp"><div class="exp-date">2025–present</div><div><p class="exp-role"><span data-lang-inline="en">Professional Intern, Institutional Relations</span><span data-lang-inline="es">Practicante Profesional, Relaciones Institucionales</span></p><p class="exp-org">AEG PUCP · Fundación Fiat Lux · Lima</p><p class="exp-desc"><span data-lang-inline="en">Corporate alliance development, donor strategy, and fundraising campaigns for a U.S.-registered 501(c)(3) scholarship initiative supporting women in mining-related engineering.</span><span data-lang-inline="es">Desarrollo de alianzas corporativas, estrategia de donantes y campañas de fundraising para una fundación 501(c)(3) de becas para mujeres en ingeniería minera.</span></p></div></div>
+    <div class="exp"><div class="exp-date">2025</div><div><p class="exp-role"><span data-lang-inline="en">Programs & Communications Analyst</span><span data-lang-inline="es">Analista de Programas y Comunicaciones</span></p><p class="exp-org">Fundación Multitudes · Santiago de Chile</p><p class="exp-desc"><span data-lang-inline="en">Institutional communications, reporting to Global Affairs Canada, social media management, and WordPress content.</span><span data-lang-inline="es">Comunicaciones institucionales, reporte a Global Affairs Canada, gestión de redes sociales y WordPress.</span></p></div></div>
+    <div class="exp"><div class="exp-date">2024–2025</div><div><p class="exp-role"><span data-lang-inline="en">Research Assistant, Digital Rights</span><span data-lang-inline="es">Asistente de Investigación, Derechos Digitales</span></p><p class="exp-org">CELE · Universidad de Palermo · Buenos Aires</p><p class="exp-desc"><span data-lang-inline="en">Legislative and jurisprudence reports on platform liability, freedom of expression, and digital gender-based violence across Latin America.</span><span data-lang-inline="es">Informes legislativos y de jurisprudencia sobre regulación digital, libertad de expresión y violencia digital de género en América Latina.</span></p></div></div>
+    <div class="exp"><div class="exp-date">2024–2025</div><div><p class="exp-role"><span data-lang-inline="en">Project Assistant — WikiPUCP & Editatón</span><span data-lang-inline="es">Asistente de Proyecto — WikiPUCP y Editatón</span></p><p class="exp-org">Facultad de Ciencias Sociales, PUCP · Lima</p><p class="exp-desc"><span data-lang-inline="en">Coordination with Wikimedia Perú, reaching 350+ participants and producing ~100 Wikipedia articles on Peruvian social science topics.</span><span data-lang-inline="es">Coordinación con Wikimedia Perú: 350+ participantes y ~100 artículos de Wikipedia sobre ciencias sociales peruanas.</span></p></div></div>
+    <div class="exp"><div class="exp-date">2022</div><div><p class="exp-role"><span data-lang-inline="en">Youth Delegate</span><span data-lang-inline="es">Delegada Juvenil</span></p><p class="exp-org">OAS General Assembly · Lima</p><p class="exp-desc"><span data-lang-inline="en">Represented Peru at the Organization of American States General Assembly.</span><span data-lang-inline="es">Representó al Perú en la Asamblea General de la OEA.</span></p></div></div>
+    <div class="exp"><div class="exp-date">2022</div><div><p class="exp-role"><span data-lang-inline="en">Research Assistant</span><span data-lang-inline="es">Asistente de Investigación</span></p><p class="exp-org">IDEI PUCP · Lima</p><p class="exp-desc"><span data-lang-inline="en">Report writing and research on the state of democracy in Latin America at PUCP's Institute of International Studies.</span><span data-lang-inline="es">Redacción de informes sobre el estado de la democracia en América Latina en el Instituto de Estudios Internacionales PUCP.</span></p></div></div>
+    <div class="exp"><div class="exp-date">2022</div><div><p class="exp-role"><span data-lang-inline="en">Young Parliamentarian — Ucayali Region</span><span data-lang-inline="es">Parlamentaria Juvenil — Región Ucayali</span></p><p class="exp-org"><span data-lang-inline="en">Peruvian Youth Parliament · Lima</span><span data-lang-inline="es">Parlamento Juvenil Peruano · Lima</span></p><p class="exp-desc"><span data-lang-inline="en">Represented Ucayali in public debate and legislative simulation in the Congress of the Republic.</span><span data-lang-inline="es">Representó a Ucayali en debate público y simulación legislativa en el Congreso de la República.</span></p></div></div>
+    <div class="exp"><div class="exp-date">2022</div><div><p class="exp-role"><span data-lang-inline="en">Intercultural Promoter</span><span data-lang-inline="es">Promotora Intercultural</span></p><p class="exp-org"><span data-lang-inline="en">Peruvian Ministry of Culture · Lima</span><span data-lang-inline="es">Ministerio de Cultura del Perú · Lima</span></p><p class="exp-desc"><span data-lang-inline="en">Planning and execution of intercultural events and outreach programmes.</span><span data-lang-inline="es">Planificación y ejecución de eventos culturales y programas de difusión intercultural.</span></p></div></div>
+    <div class="exp"><div class="exp-date">2021</div><div><p class="exp-role"><span data-lang-inline="en">Summer School — EU Policy</span><span data-lang-inline="es">Summer School — Política de la UE</span></p><p class="exp-org">Ludwig Maximilian Universität München · Germany</p><p class="exp-desc"><span data-lang-inline="en">Full scholarship. Programme on the European Union, its institutions and future projections.</span><span data-lang-inline="es">Beca completa. Programa sobre la Unión Europea, sus instituciones y proyecciones futuras.</span></p></div></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="bg-white">
+<div class="wrap">
+  <p class="sec-label"><span data-lang-inline="en">Contact</span><span data-lang-inline="es">Contacto</span></p>
+  <h2 class="sec-title"><span data-lang-inline="en">Let's work<br>together</span><span data-lang-inline="es">Trabajemos<br>juntas/os</span></h2>
+  <div class="sec-bar"></div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-text" data-lang="en">I am open to fellowships, research collaborations, communications consulting, and policy projects — especially those focused on digital rights, gender equity, multilateral affairs, or AI governance in the Global South.</p>
+      <p class="contact-text" data-lang="es">Estoy abierta a fellowships, colaboraciones de investigación, consultoría en comunicaciones y proyectos de política — especialmente los enfocados en derechos digitales, equidad de género, asuntos multilaterales o gobernanza de IA en el Sur Global.</p>
+      <p style="font-size:0.8rem;color:var(--faint);margin-top:1.5rem;">Lima, Perú</p>
+    </div>
+    <div class="contact-items">
+      <a href="/cdn-cgi/l/email-protection#81e0f3e4f7e0edeee2e0edede4eae0f3e4efc1e6ece0e8edafe2eeec" class="citem">
+        <div class="cico">@</div>
+        <div><span class="clbl">Email</span><span class="cval"><span class="__cf_email__" data-cfemail="6302110615020f0c00020f0f06080211060d23040e020a0f4d000c0e">[email&#160;protected]</span></span></div>
+      </a>
+      <a href="https://linkedin.com/in/tu-perfil" class="citem">
+        <div class="cico">in</div>
+        <div><span class="clbl">LinkedIn</span><span class="cval">linkedin.com/in/tu-perfil</span></div>
+      </a>
+      <a href="#" class="citem">
+        <div class="cico">CV</div>
+        <div>
+          <span class="clbl"><span data-lang-inline="en">Résumé</span><span data-lang-inline="es">Currículum</span></span>
+          <span class="cval"><span data-lang-inline="en">Download PDF</span><span data-lang-inline="es">Descargar PDF</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <span>Karen Arévalo Calle · Lima, Perú</span>
+  <span><span data-lang-inline="en">International Relations · Digital Rights</span><span data-lang-inline="es">Relaciones Internacionales · Derechos Digitales</span></span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function setLang(lang) {
+  document.body.className = lang;
+  document.querySelectorAll('.lang-switch button').forEach(b => {
+    b.classList.toggle('
