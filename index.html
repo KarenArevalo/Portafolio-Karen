@@ -116,9 +116,15 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 }
 .btn-ghost:hover { color: white; border-color: white; }
 .hero-langs { margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.lang-tag { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
-.lang-tag strong { font-weight: 500; color: rgba(255,255,255,0.8); }
-
+.lang-tag {
+  font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: inline-flex; align-items: center;
+}
+.lang-tag img { width: 20px; height: 15px; border-radius: 2px; display: block; }
 /* PHOTO */
 .hero-photo-col { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 0 4rem 3rem; }
 .photo-frame { position: relative; width: 320px; height: 390px; }
@@ -341,10 +347,10 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
       <a href="#contact" class="btn-ghost"><span data-lang-inline="en">Get in touch</span><span data-lang-inline="es">Escríbeme</span></a>
     </div>
     <div class="hero-langs">
-      <span class="lang-tag"><img src="https://flagcdn.com/20x15/pe.png" alt="PE"> <strong>ES</strong> Native</span>
-      <span class="lang-tag"><img src="https://flagcdn.com/20x15/us.png" alt="US"> <strong>EN</strong> Advanced</span>
-      <span class="lang-tag"><img src="https://flagcdn.com/20x15/br.png" alt="BR"> <strong>PT</strong> Intermediate</span>
-      <span class="lang-tag"><img src="https://flagcdn.com/20x15/fr.png" alt="FR"> <strong>FR</strong> Intermediate</span>
+     <span class="lang-tag"><img src="https://flagcdn.com/20x15/es.png" alt="ES"> Native</span>
+     <span class="lang-tag"><img src="https://flagcdn.com/20x15/us.png" alt="EN"> Advanced</span>
+     <span class="lang-tag"><img src="https://flagcdn.com/20x15/br.png" alt="PT"> Intermediate</span>
+     <span class="lang-tag"><img src="https://flagcdn.com/20x15/fr.png" alt="FR"> Intermediate</span>
     </div>
   </div>
   <div class="hero-photo-col">
