@@ -463,34 +463,103 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
   <p class="sec-label"><span data-lang-inline="en">Writing & Research</span><span data-lang-inline="es">Escritura e Investigación</span></p>
   <h2 class="sec-title"><span data-lang-inline="en">Articles, essays &<br>policy analysis</span><span data-lang-inline="es">Artículos, ensayos y<br>análisis de política</span></h2>
   <div class="sec-bar"></div>
-  <div class="writing-grid">
-    <a href="#" class="card">
+ 
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterCards('all')"><span data-lang-inline="en">All</span><span data-lang-inline="es">Todos</span></button>
+    <button class="filter-btn" onclick="filterCards('digital')"><span data-lang-inline="en">Digital Rights</span><span data-lang-inline="es">Derechos Digitales</span></button>
+    <button class="filter-btn" onclick="filterCards('gender')"><span data-lang-inline="en">Gender & Human Rights</span><span data-lang-inline="es">Género y DDHH</span></button>
+    <button class="filter-btn" onclick="filterCards('ir')"><span data-lang-inline="en">International Relations</span><span data-lang-inline="es">Relaciones Internacionales</span></button>
+  </div>
+ 
+  <div class="writing-grid" id="articles-grid">
+ 
+    <a href="https://observatoriolegislativocele.com/vanina-biasi-discurso-de-odio-o-critica-politica/" target="_blank" class="card" data-cat="digital gender">
       <p class="card-tag">Digital Rights · Blog · CELE</p>
-      <h3 class="card-title"><span data-lang-inline="en">The Biasi Case: Hate Speech and Political Criticism in the Platform Era</span><span data-lang-inline="es">El caso Biasi: discurso de odio y crítica política en la era de las plataformas</span></h3>
-      <p class="card-excerpt"><span data-lang-inline="en">Analysis of the Argentine Supreme Court ruling examining where political criticism ends and hate speech begins — and what it means for digital expression across Latin America.</span><span data-lang-inline="es">Análisis del fallo argentino que examina dónde termina la crítica política y comienza el discurso de odio, y sus implicancias para la expresión digital en América Latina.</span></p>
-      <p class="card-meta">Universidad de Palermo · CELE · 2025</p>
+      <h3 class="card-title"><span data-lang-inline="en">Vanina Biasi: Hate Speech or Political Criticism?</span><span data-lang-inline="es">Vanina Biasi: ¿Discurso de odio o crítica política?</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Analysis of the Argentine case examining the boundary between political criticism and hate speech in the digital platform era.</span><span data-lang-inline="es">Análisis del caso argentino que examina el límite entre la crítica política y el discurso de odio en la era de las plataformas digitales.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2025</p>
     </a>
-    <a href="#" class="card">
-      <p class="card-tag"><span data-lang-inline="en">Electoral Politics · Policy Brief</span><span data-lang-inline="es">Política Electoral · Policy Brief</span></p>
-      <h3 class="card-title"><span data-lang-inline="en">Peru 2026: Democratic Fragility Without Collapse</span><span data-lang-inline="es">Perú 2026: Fragilidad Democrática Sin Colapso</span></h3>
-      <p class="card-excerpt"><span data-lang-inline="en">Peru represents a distinct regional pattern — formally intact institutions with no governing capacity. A comparative analysis using Ecuador and Bolivia as reference points.</span><span data-lang-inline="es">El Perú representa un patrón regional diferenciado: instituciones formalmente intactas con nula capacidad de gobierno. Análisis comparado con Ecuador y Bolivia.</span></p>
-      <p class="card-meta">2025–2026</p>
+ 
+    <a href="https://observatoriolegislativocele.com/wp-content/uploads/informe-legislativo-brasil-13.pdf" target="_blank" class="card" data-cat="digital">
+      <p class="card-tag"><span data-lang-inline="en">Legislative Report · Digital Rights · CELE</span><span data-lang-inline="es">Informe Legislativo · Derechos Digitales · CELE</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Brazil: Bill 4691/2024 on Digital Platforms and Constitutional Freedoms</span><span data-lang-inline="es">Brasil: Proyecto de Ley 4691/2024 sobre plataformas digitales y libertades constitucionales</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Legislative report on the Brazilian bill regulating the protection of constitutional liberties and fundamental rights in digital platforms and internet markets.</span><span data-lang-inline="es">Informe sobre el proyecto de ley brasileño que regula la protección de libertades constitucionales y derechos fundamentales en plataformas e internet.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2024</p>
     </a>
-    <a href="#" class="card">
-      <p class="card-tag"><span data-lang-inline="en">AI Governance · Undergraduate Thesis</span><span data-lang-inline="es">Gobernanza de IA · Tesis de Licenciatura</span></p>
-      <h3 class="card-title"><span data-lang-inline="en">Beyond Cold War 2.0: Competition, Cooperation & Coexistence in US-China AI Relations</span><span data-lang-inline="es">Más allá de la Guerra Fría 2.0: Competencia, Cooperación y Coexistencia en IA</span></h3>
-      <p class="card-excerpt"><span data-lang-inline="en">Against the Cold War framing of US-China tech rivalry, this thesis proposes an analytical triad that accounts for Global South agency and AI's reconfiguration of global value chains.</span><span data-lang-inline="es">Propone una tríada analítica frente al marco de Guerra Fría, incorporando la agencia del Sur Global y la reconfiguración de cadenas de valor por la IA.</span></p>
-      <p class="card-meta">PUCP · 2025</p>
+ 
+    <a href="https://observatoriolegislativocele.com/wp-content/uploads/Informe-legislativo-14-Colombia.pdf" target="_blank" class="card" data-cat="digital gender">
+      <p class="card-tag"><span data-lang-inline="en">Legislative Report · Digital Rights · CELE</span><span data-lang-inline="es">Informe Legislativo · Derechos Digitales · CELE</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Colombia: Bill 261/2024 on Minors' Access to Social Media</span><span data-lang-inline="es">Colombia: Proyecto de Ley 261/2024 que regula el acceso de menores a redes sociales</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Legislative report analyzing Colombia's proposed regulation on minors' access to social media platforms and its implications for digital rights.</span><span data-lang-inline="es">Informe sobre la propuesta colombiana de regulación del acceso de menores a redes sociales y sus implicancias para los derechos digitales.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2024</p>
     </a>
-    <a href="#" class="card">
-      <p class="card-tag"><span data-lang-inline="en">Digital Regulation · Legislative Reports</span><span data-lang-inline="es">Regulación Digital · Informes Legislativos</span></p>
-      <h3 class="card-title"><span data-lang-inline="en">Digital Regulation in Latin America: Brazil, Colombia, Dominican Republic</span><span data-lang-inline="es">Regulación Digital en América Latina: Brasil, Colombia, República Dominicana</span></h3>
-      <p class="card-excerpt"><span data-lang-inline="en">Legislative and jurisprudence reports tracking platform liability, freedom of expression, and digital gender-based violence across the region.</span><span data-lang-inline="es">Informes sobre responsabilidad de plataformas, libertad de expresión y violencia digital de género en la región.</span></p>
-      <p class="card-meta">CELE · Universidad de Palermo · 2024–2025</p>
+ 
+    <a href="https://observatoriolegislativocele.com/wp-content/uploads/Informe-legislativo-15-RD.pdf" target="_blank" class="card" data-cat="digital">
+      <p class="card-tag"><span data-lang-inline="en">Legislative Report · Freedom of Expression · CELE</span><span data-lang-inline="es">Informe Legislativo · Libertad de Expresión · CELE</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Dominican Republic: Organic Law on Freedom of Expression and Audiovisual Media</span><span data-lang-inline="es">República Dominicana: Nueva Ley Orgánica de Libertad de Expresión y Medios Audiovisuales</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Report on the Dominican Republic's new organic law on freedom of expression, examining its scope and implications for media and digital rights.</span><span data-lang-inline="es">Informe sobre la nueva ley orgánica dominicana de libertad de expresión, analizando su alcance e implicancias para medios y derechos digitales.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2024</p>
     </a>
+ 
+    <a href="https://observatoriolegislativocele.com/wp-content/uploads/Informe-legislativo-16-Hungria.pdf" target="_blank" class="card" data-cat="digital gender">
+      <p class="card-tag"><span data-lang-inline="en">Legislative Report · LGBTIQ+ Rights · CELE</span><span data-lang-inline="es">Informe Legislativo · Derechos LGBTIQ+ · CELE</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Hungary: Reform Banning LGBTIQ+ Marches and Freedom of Assembly</span><span data-lang-inline="es">Hungría: La reforma que prohíbe marchas LGBTIQ+ y su impacto en la libertad de reunión</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Analysis of Hungary's legislative amendments to assembly law and their impact on LGBTIQ+ rights and freedom of expression.</span><span data-lang-inline="es">Análisis de las modificaciones legislativas húngaras sobre el derecho de reunión y su impacto en los derechos LGBTIQ+ y la libertad de expresión.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2024</p>
+    </a>
+ 
+    <a href="https://observatoriolegislativocele.com/wp-content/uploads/Informe-jurisprudencia-brasil-n%C2%B02.pdf" target="_blank" class="card" data-cat="digital">
+      <p class="card-tag"><span data-lang-inline="en">Jurisprudence Report · Platform Liability · CELE</span><span data-lang-inline="es">Informe de Jurisprudencia · Responsabilidad de Plataformas · CELE</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Brazil: Constitutionality of Article 19 of the Marco Civil de Internet</span><span data-lang-inline="es">Brasil: Análisis de la constitucionalidad del artículo 19 del Marco Civil de Internet</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Jurisprudence report analyzing the constitutionality of Brazil's landmark platform liability provision and its implications for digital governance.</span><span data-lang-inline="es">Informe de jurisprudencia sobre la constitucionalidad del artículo de responsabilidad de plataformas en Brasil y sus implicancias para la gobernanza digital.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2025</p>
+    </a>
+ 
+    <a href="https://observatoriolegislativocele.com/wp-content/uploads/informe-jurisprudencia-mexico-3.pdf" target="_blank" class="card" data-cat="digital">
+      <p class="card-tag"><span data-lang-inline="en">Jurisprudence Report · Intermediary Liability · CELE</span><span data-lang-inline="es">Informe de Jurisprudencia · No Responsabilidad de Intermediarios · CELE</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Mexico: Amparo 767/2023 and the Principle of Intermediary Non-Liability</span><span data-lang-inline="es">México: Amparo en revisión 767/2023 y el principio de no responsabilidad de intermediarios</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Analysis of a key Mexican Supreme Court ruling on intermediary liability and its significance for platform regulation across Latin America.</span><span data-lang-inline="es">Análisis de un fallo clave de la Suprema Corte mexicana sobre responsabilidad de intermediarios y su relevancia para la regulación de plataformas en América Latina.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2025</p>
+    </a>
+ 
+    <a href="https://observatoriolegislativocele.com/wp-content/uploads/informe-de-jurisprudencia-4-colombia.pdf" target="_blank" class="card" data-cat="digital gender">
+      <p class="card-tag"><span data-lang-inline="en">Jurisprudence Report · Digital Gender Violence · CELE</span><span data-lang-inline="es">Informe de Jurisprudencia · Violencia Digital de Género · CELE</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Colombia: Sentencia T-149/2025 on Digital Political Gender Violence</span><span data-lang-inline="es">Colombia: Sentencia T-149 de 2025 sobre violencia de género digital política</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Analysis of the Colombian Constitutional Court ruling on digital gender-based violence in political contexts and its implications for freedom of expression.</span><span data-lang-inline="es">Análisis del fallo de la Corte Constitucional colombiana sobre violencia digital de género en contextos políticos y sus implicancias para la libertad de expresión.</span></p>
+      <p class="card-meta">CELE · Universidad de Palermo · 2025</p>
+    </a>
+ 
+    <a href="https://sofinternationalists.wordpress.com/2021/09/13/beijing26-entre-compromisos-y-acciones-el-impacto-de-la-plataforma-de-beijing-en-los-derechos-de-la-mujer-en-el-peru/" target="_blank" class="card" data-cat="gender ir">
+      <p class="card-tag"><span data-lang-inline="en">Gender Rights · Opinion · SOFI</span><span data-lang-inline="es">Derechos de la Mujer · Opinión · SOFI</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Beijing+26: Between Commitments and Action — The Beijing Platform's Impact on Women's Rights in Peru</span><span data-lang-inline="es">Beijing+26: Entre compromisos y acciones — el impacto de la Plataforma de Beijing en los derechos de la mujer en el Perú</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Assessment of the Beijing Platform for Action's impact on women's rights in Peru, 26 years after its adoption, examining gaps between commitments and implementation.</span><span data-lang-inline="es">Evaluación del impacto de la Plataforma de Beijing en los derechos de la mujer en el Perú, 26 años después, analizando la brecha entre compromisos e implementación.</span></p>
+      <p class="card-meta">Sisterhood of Internationalists · 2022</p>
+    </a>
+ 
+    <a href="https://sofinternationalists.wordpress.com/2022/03/17/el-desorden-mundial-las-pinceladas-de-una-nueva-estructura-en-el-sistema-internacional/" target="_blank" class="card" data-cat="ir">
+      <p class="card-tag"><span data-lang-inline="en">International Order · Opinion · SOFI</span><span data-lang-inline="es">Orden Internacional · Opinión · SOFI</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">The (Dis)World Order: Outlines of a New International System Structure</span><span data-lang-inline="es">El (des)Orden Mundial: las pinceladas de una nueva estructura en el Sistema Internacional</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Analysis of the shifts in the international system and the emerging contours of a new global order amid growing multipolarity and institutional fragmentation.</span><span data-lang-inline="es">Análisis de los cambios en el sistema internacional y los contornos emergentes de un nuevo orden global ante la creciente multipolaridad y la fragmentación institucional.</span></p>
+      <p class="card-meta">Sisterhood of Internationalists · 2022</p>
+    </a>
+ 
+    <a href="https://repositorio.pucp.edu.pe/items/8a368bde-3d8f-48a1-829e-b4026b66abd2" target="_blank" class="card" data-cat="ir">
+      <p class="card-tag"><span data-lang-inline="en">Research Assistance · Democracy · IDEI PUCP</span><span data-lang-inline="es">Asistencia de Investigación · Democracia · IDEI PUCP</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Latin American Democracy in Crisis: Anti-models and Authoritarian Trends</span><span data-lang-inline="es">La democracia latinoamericana en crisis: antimodelos y tendencias autoritarias</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Co-authored with Fabián Novak and Sandra Namihas. Research on democratic backsliding and authoritarian trends across Latin America.</span><span data-lang-inline="es">Coautoría con Fabián Novak y Sandra Namihas. Investigación sobre el retroceso democrático y las tendencias autoritarias en América Latina.</span></p>
+      <p class="card-meta">IDEI PUCP · 2022</p>
+    </a>
+ 
+    <a href="https://estudios-generales-letras.pucp.edu.pe/entrevista-a-clara-lopez-de-murillo-sobre-la-mujer-y-la-educacion-en-peru/" target="_blank" class="card" data-cat="gender">
+      <p class="card-tag"><span data-lang-inline="en">Interview · Gender & Education · PUCP</span><span data-lang-inline="es">Entrevista · Género y Educación · PUCP</span></p>
+      <h3 class="card-title"><span data-lang-inline="en">Interview with Clara López de Murillo on Women and Education in Peru</span><span data-lang-inline="es">Entrevista a Clara López de Murillo sobre la mujer y la educación en el Perú</span></h3>
+      <p class="card-excerpt"><span data-lang-inline="en">Published in PUCP's bulletin, this interview explores the state of women's participation in education in Peru and the structural barriers they face.</span><span data-lang-inline="es">Publicada en el boletín PUCP, esta entrevista explora el estado de la participación femenina en la educación peruana y las barreras estructurales que enfrentan.</span></p>
+      <p class="card-meta">Boletín PUCP · 2021</p>
+    </a>
+ 
   </div>
 </div>
-
+ 
 <!-- DESIGN -->
 <div id="design" class="bg-white">
 <div class="wrap">
@@ -507,7 +576,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     <div class="ditem"><div class="ditem-icon">◈</div><p class="ditem-cat">WikiPUCP</p><p class="ditem-name"><span data-lang-inline="en">Event design & outreach</span><span data-lang-inline="es">Diseño de evento y difusión</span></p></div>
     <div class="ditem"><div class="ditem-icon">⊡</div><p class="ditem-cat">Web</p><p class="ditem-name">WordPress · GitHub Pages</p></div>
   </div>
-
+ 
   <h3 class="gallery-heading"><span data-lang-inline="en">Projects & field experience</span><span data-lang-inline="es">Proyectos y experiencia de campo</span></h3>
   <div class="gallery-grid" id="project-gallery">
     <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
@@ -515,7 +584,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
     <div class="gallery-item ph"><div class="ph-icon">&#128247;</div><p class="ph-label"><span data-lang-inline="en">Add project photo</span><span data-lang-inline="es">Añade foto de proyecto</span></p><p class="ph-hint">img src="foto.jpg"</p></div>
   </div>
-
+ 
   <h3 class="gallery-heading"><span data-lang-inline="en">Certifications & credentials</span><span data-lang-inline="es">Certificados y credenciales</span></h3>
   <div class="cert-grid">
     <div class="cert-item ph"><div class="cert-icon">&#127881;</div><p class="ph-label"><span data-lang-inline="en">Add certificate</span><span data-lang-inline="es">Añade certificado</span></p><p class="ph-hint">img src="cert.jpg"</p></div>
@@ -524,7 +593,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
   </div>
 </div>
 </div>
-
+ 
 <!-- EXPERIENCE -->
 <div class="wrap" id="experience">
   <p class="sec-label"><span data-lang-inline="en">Experience</span><span data-lang-inline="es">Experiencia</span></p>
@@ -542,7 +611,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     <div class="exp"><div class="exp-date">2021</div><div><p class="exp-role"><span data-lang-inline="en">Summer School — EU Policy</span><span data-lang-inline="es">Summer School — Política de la UE</span></p><p class="exp-org">Ludwig Maximilian Universität München · Germany</p><p class="exp-desc"><span data-lang-inline="en">Full scholarship. Programme on the European Union, its institutions and future projections.</span><span data-lang-inline="es">Beca completa. Programa sobre la Unión Europea, sus instituciones y proyecciones futuras.</span></p></div></div>
   </div>
 </div>
-
+ 
 <!-- CONTACT -->
 <div id="contact" class="bg-white">
 <div class="wrap">
@@ -575,14 +644,14 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
   </div>
 </div>
 </div>
-
+ 
 <footer>
   <span>Karen Arévalo Calle · Lima, Perú</span>
   <span><span data-lang-inline="en">International Relations · Digital Rights</span><span data-lang-inline="es">Relaciones Internacionales · Derechos Digitales</span></span>
 </footer>
-
+ 
 <script>
-   function filterCards(cat) {
+function filterCards(cat) {
   document.querySelectorAll('.filter-btn').forEach(function(b) {
     b.classList.toggle('active', b.getAttribute('onclick') === "filterCards('" + cat + "')");
   });
@@ -595,7 +664,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     }
   });
 }
-    function setLang(lang) {
+ 
   document.querySelectorAll('[data-lang]').forEach(function(el) {
     el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
   });
