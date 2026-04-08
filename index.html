@@ -664,7 +664,8 @@ function filterCards(cat) {
     }
   });
 }
- 
+
+function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(function(el) {
     el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
   });
@@ -676,6 +677,7 @@ function filterCards(cat) {
   });
   document.documentElement.lang = lang;
 }
+
 window.addEventListener('scroll', function() {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
 });
