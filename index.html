@@ -167,24 +167,32 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 /* ABOUT */
 .about-grid { display:grid; grid-template-columns:1.3fr 1fr; gap:5rem; align-items:start; }
 .about-text p { color:var(--muted); margin-bottom:1.1rem; font-size:0.97rem; }
-.stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .stat {
-  background: white; border: 1px solid var(--border); border-radius: 12px;
-  padding: 1.25rem 1.25rem 1.1rem; transition: transform 0.2s, box-shadow 0.2s;
-  position: relative; overflow: hidden;
+  background: var(--fog);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  position: relative;
+  display: flex; flex-direction: column; gap: 6px;
 }
-.stat::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--blue), #93C5FD);
+.stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(26,86,219,0.09);
+  background: white;
 }
-.stat:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,86,219,0.1); }
-.stat:first-child { grid-column: span 2; background: var(--navy); border-color: var(--navy); }
-.stat:first-child::before { background: linear-gradient(90deg, #60A5FA, #93C5FD); }
-.stat:first-child .stat-val { color: white; }
-.stat:first-child .stat-lbl { color: rgba(255,255,255,0.6); }
-.stat-val { font-family:'Cormorant Garant',serif; font-size:1.9rem; color:var(--navy); font-weight:600; line-height:1; margin-bottom:0.4rem; }
-.stat-lbl { font-size:0.8rem; color:var(--muted); line-height:1.5; }
-
+.stat:first-child { grid-column: span 2; }
+.stat-val {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 2rem; color: var(--navy); font-weight: 600; line-height: 1;
+}
+.stat-lbl { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+.stat-icon {
+  font-size: 1rem; margin-bottom: 2px;
+  opacity: 0.35;
+}
+  
 /* WRITING */
 .writing-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
 .card {
@@ -400,27 +408,31 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
   <div class="sec-bar"></div>
   <div class="about-grid">
     <div class="about-text">
-      <p data-lang="en">I am an International Relations graduate from PUCP (Pontificia Universidad Católica del Perú), where I graduated in the top third of my class as a Beca 18 scholarship recipient. My academic and professional formation spans digital rights research, institutional communications, gender equality advocacy, and multilateral engagement.</p>
-      <p data-lang="en">My work bridges policy analysis and strategic communications. From coordinating Wikipedia editing marathons to developing fundraising strategy for a scholarship foundation, from writing jurisprudence reports on digital regulation in Latin America to drafting corporate alliance frameworks.</p>
+      <p data-lang="en">I am an International Relations B.A. from PUCP (Pontificia Universidad Católica del Perú), where I graduated in the top third of my class as a Beca 18 scholarship recipient. My academic and professional formation spans digital rights research, institutional communications, gender equality advocacy, and multilateral engagement.</p>
+      <p data-lang="en">My work bridges policy analysis and strategic communications — from coordinating Wikipedia editing marathons to developing fundraising strategy for a scholarship foundation, from writing jurisprudence reports on digital regulation in Latin America to drafting corporate alliance frameworks.</p>
       <p data-lang="en">I am drawn to problems at the intersection of technology, power, and equity: how AI reshapes global value chains, how freedom of expression is contested online, how Global South actors navigate multilateral institutions. I bring to this work a commitment to intellectual honesty, a preference for arguments over assertions, and a belief that good writing is itself a form of political action.</p>
-      <p data-lang="es">Soy internacionalista egresada de la PUCP (Pontificia Universidad Católica del Perú), graduada en el tercio superior como beneficiaria de la Beca 18. Mi formación abarca investigación en derechos digitales, comunicaciones institucionales, advocacy de igualdad de género y participación multilateral.</p>
+      <p data-lang="es">Soy Bachiller en Relaciones internacionales egresada de la PUCP (Pontificia Universidad Católica del Perú), graduada en el tercio superior como beneficiaria de la Beca 18. Mi formación abarca investigación en derechos digitales, comunicaciones institucionales, advocacy de igualdad de género y participación multilateral.</p>
       <p data-lang="es">Mi trabajo conecta el análisis de políticas con las comunicaciones estratégicas: desde la coordinación de maratones de edición en Wikipedia hasta el desarrollo de estrategias de fundraising para una fundación de becas; desde informes de jurisprudencia sobre regulación digital hasta marcos de alianzas corporativas.</p>
       <p data-lang="es">Me atraen los problemas en la intersección de tecnología, poder y equidad: cómo la IA reconfigura las cadenas de valor globales, cómo se disputa la libertad de expresión en línea, cómo los actores del Sur Global navegan las instituciones multilaterales. A este trabajo aporto honestidad intelectual, preferencia por los argumentos, y la convicción de que escribir bien es también una forma de acción política.</p>
     </div>
     <div class="stat-grid">
       <div class="stat">
+        <div class="stat-icon">🎓</div>
         <div class="stat-val">PUCP</div>
         <div class="stat-lbl"><span data-lang-inline="en">B.A. International Relations · Top third · 2025</span><span data-lang-inline="es">Lic. Ciencia Política · RRII · Tercio superior · 2025</span></div>
       </div>
       <div class="stat">
+        <div class="stat-icon">🏅</div>
         <div class="stat-val">Beca 18</div>
         <div class="stat-lbl"><span data-lang-inline="en">Full national scholarship</span><span data-lang-inline="es">Beca nacional completa</span></div>
       </div>
       <div class="stat">
+        <div class="stat-icon">✍️</div>
         <div class="stat-val">350+</div>
         <div class="stat-lbl">WikiPUCP &amp; Editatón PUCP</div>
       </div>
       <div class="stat">
+        <div class="stat-icon">🌎</div>
         <div class="stat-val">OEA</div>
         <div class="stat-lbl"><span data-lang-inline="en">Youth Delegate 2022</span><span data-lang-inline="es">Delegada Juvenil 2022</span></div>
       </div>
