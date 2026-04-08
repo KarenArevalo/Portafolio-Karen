@@ -116,15 +116,9 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 }
 .btn-ghost:hover { color: white; border-color: white; }
 .hero-langs { margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.lang-tag {
-  font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45);
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 6px;
-  padding: 4px 8px;
-  display: inline-flex; align-items: center;
-}
-.lang-tag img { width: 20px; height: 15px; border-radius: 2px; display: inline-block; margin-right: 6px; vertical-align: middle; }
+.lang-tag { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
+.lang-tag strong { font-weight: 500; color: rgba(255,255,255,0.8); }
+
 /* PHOTO */
 .hero-photo-col { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 0 4rem 3rem; }
 .photo-frame { position: relative; width: 320px; height: 390px; }
@@ -155,7 +149,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .badge-title { font-weight:500; color:var(--ink); font-size:0.75rem; display:block; }
 .badge-sub { color:var(--muted); font-size:0.68rem; display:block; }
 .badge2 {
-  position: absolute; top: -20px; right: -28px;
+  position: absolute; top: 50%; right: -28px; transform: translateY(-50%);
   background: var(--blue); border-radius: 8px; padding: 10px 16px;
   box-shadow: 0 8px 32px rgba(26,86,219,0.3);
 }
@@ -298,21 +292,33 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
   nav{padding:0 1.5rem;}
   .nav-links{display:none;}
   .hero{grid-template-columns:1fr;padding:5rem 1.5rem 3rem;}
-  .hero-photo-col{display:none;}
+  .hero-photo-col{
+    display:flex;
+    padding:0 1.5rem 3rem;
+    justify-content:center;
+  }
+  .photo-frame{width:240px;height:290px;}
+  .badge{left:-10px;bottom:16px;}
+  .badge2{right:-10px;top:-10px;}
   .wrap,.bg-white .wrap{padding:4rem 1.5rem;}
   .about-grid{grid-template-columns:1fr;gap:2rem;}
   .writing-grid{grid-template-columns:1fr;}
-  .design-grid{grid-template-columns:repeat(2,1fr);}
+  .design-grid{grid-template-columns:1fr 1fr;gap:0.75rem;}
+  .ditem{padding:1rem;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .cert-grid{grid-template-columns:1fr 1fr;}
   .exp{grid-template-columns:1fr;gap:0.4rem;}
   .contact-grid{grid-template-columns:1fr;gap:2rem;}
   footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}
+  .stat-grid{grid-template-columns:1fr 1fr;}
+  .stat:first-child{grid-column:span 2;}
 }
 </style>
 </head>
 <body class="en">
 
 <nav id="nav">
-  <a class="nav-logo" href="#"><img src="logo-ka-ok.pg.png" alt="KA" style="height:32px;width:auto;display:block;">
+  <a class="nav-logo" href="#"><img src="logo-ka.png" alt="KA" style="height:32px;width:auto;display:block;filter:brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(800%) hue-rotate(190deg) brightness(60%);"></a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#about"><span data-lang-inline="en">About</span><span data-lang-inline="es">Sobre mí</span></a></li>
@@ -347,20 +353,21 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
       <a href="#contact" class="btn-ghost"><span data-lang-inline="en">Get in touch</span><span data-lang-inline="es">Escríbeme</span></a>
     </div>
     <div class="hero-langs">
-     <span class="lang-tag"><img src="https://flagcdn.com/20x15/es.png" alt="ES">  Native</span>
-     <span class="lang-tag"><img src="https://flagcdn.com/20x15/us.png" alt="EN">  Advanced</span>
-     <span class="lang-tag"><img src="https://flagcdn.com/20x15/br.png" alt="PT">  Intermediate</span>
-     <span class="lang-tag"><img src="https://flagcdn.com/20x15/fr.png" alt="FR">  Intermediate</span>
+      <span class="lang-tag"><strong>ES</strong> Native</span>
+      <span class="lang-tag"><strong>EN</strong> Advanced</span>
+      <span class="lang-tag"><strong>PT</strong> Intermediate</span>
+      <span class="lang-tag"><strong>FR</strong> Intermediate</span>
     </div>
   </div>
   <div class="hero-photo-col">
     <div class="photo-frame">
       <div class="photo-inner">
         <!-- Para añadir tu foto: reemplaza este bloque con <img src="foto.jpg" alt="Karen Arévalo Calle"> -->
-        <img src="Karen-foto.png" alt="Karen Arévalo Calle">
+        <div class="photo-ph-icon">&#9786;</div>
+        <p class="photo-ph-text">Añade tu foto aquí<br><span style="opacity:0.6;font-size:0.65rem;">img src="tu-foto.jpg"</span></p>
       </div>
       <div class="badge">
-        <img src="logo-oea.jpg" alt="OEA" style="width:32px;height:32px;border-radius:50%;object-fit:contain;background:white;padding:2px;">
+        <div class="badge-ico">OEA</div>
         <div>
           <span class="badge-title"><span data-lang-inline="en">Youth Delegate</span><span data-lang-inline="es">Delegada Juvenil</span></span>
           <span class="badge-sub">OAS General Assembly · 2022</span>
@@ -368,7 +375,7 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
       </div>
       <div class="badge2">
         <div class="badge2-num">Beca 18</div>
-        <div class="badge2-lbl"><span data-lang-inline="en">National scholarship</span><span data-lang-inline="es">Beca Nacional</span></div>
+        <div class="badge2-lbl"><span data-lang-inline="en">National Scholarship</span><span data-lang-inline="es">Beca Nacional</span></div>
       </div>
     </div>
   </div>
