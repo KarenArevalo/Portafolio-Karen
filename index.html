@@ -171,7 +171,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .sec-bar { width:36px; height:2px; background:linear-gradient(90deg,var(--blue),#93C5FD); margin:1.2rem 0 3rem; border-radius:2px; }
 
 /* ABOUT */
-.about-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:4rem; align-items:start; }
+.about-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:4rem; align-items:start; padding-top:0; }
 .about-text { padding-top: 0; }
 .stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:1.5rem; }
 .stat {
@@ -186,11 +186,10 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(26,86,219,0.08); }
 .stat-icon { font-size: 1rem; margin-bottom: 2px; opacity: 0.35; }
 
 /* IDENTITY CTAS */
-.identity-ctas { display: flex; flex-direction: column; gap: 8px; margin-top: 0; align-items: center; }
+.identity-ctas { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
 .icta {
-  display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit;
-  padding: 0.9rem 1.1rem; border-radius: 20px;
-  max-width: 340px;
+  display: flex; align-items: center; justify-content: space-between;
+  text-decoration: none; padding: 0.85rem 1.25rem; border-radius: 30px;
   background: linear-gradient(135deg, var(--navy) 0%, #1E3A8A 100%);
   border: 1px solid rgba(255,255,255,0.08);
   transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
@@ -452,29 +451,17 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
     <img src="karen.jpg" alt="Karen Arévalo presenting at PUCP" style="width:100%; border-radius:10px; object-fit:cover; margin-bottom:12px; display:block;">
     <div class="identity-ctas">
       <a href="#writing" class="icta">
-        <div class="icta-icon">✦</div>
-        <div class="icta-body">
-          <span class="icta-title">I research</span>
-          <span class="icta-desc"><span data-lang-inline="en">Policy analysis, jurisprudence & thesis</span><span data-lang-inline="es">Análisis de política, jurisprudencia y tesis</span></span>
-        </div>
-        <span class="icta-arrow">→</span>
-      </a>
-      <a href="#design" class="icta">
-        <div class="icta-icon">◈</div>
-        <div class="icta-body">
-          <span class="icta-title">I advocate</span>
-          <span class="icta-desc"><span data-lang-inline="en">Gender equity, digital rights & multilateral engagement</span><span data-lang-inline="es">Equidad de género, derechos digitales y compromiso multilateral</span></span>
-        </div>
-        <span class="icta-arrow">→</span>
-      </a>
-      <a href="#design" class="icta">
-        <div class="icta-icon">▷</div>
-        <div class="icta-body">
-          <span class="icta-title">I communicate</span>
-          <span class="icta-desc"><span data-lang-inline="en">Campaigns, visual design & editorial content</span><span data-lang-inline="es">Campañas, diseño visual y contenido editorial</span></span>
-        </div>
-        <span class="icta-arrow">→</span>
-      </a>
+  <span class="icta-title">I Research</span>
+  <span class="icta-arrow">→</span>
+</a>
+<a href="#design" class="icta">
+  <span class="icta-title">I Advocate</span>
+  <span class="icta-arrow">→</span>
+</a>
+<a href="#design" class="icta">
+  <span class="icta-title">I Communicate</span>
+  <span class="icta-arrow">→</span>
+</a>
     </div>
     </div>
   </div>
