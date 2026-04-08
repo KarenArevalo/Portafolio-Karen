@@ -274,7 +274,20 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
 .hero-langs   { animation:fadeUp 0.5s 0.5s both; }
 .photo-frame  { animation:fadeUp 0.6s 0.3s both; }
 
-/* GALLERY */
+/* FILTERS */
+.filter-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
+.filter-btn {
+  border: 1px solid var(--border); border-radius: 20px;
+  padding: 6px 16px; font-size: 0.75rem; font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  background: white; color: var(--muted); cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+.filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+.card.hidden { display: none; }
+
+  /* GALLERY */
 .gallery-heading {
   font-family: 'Syne', sans-serif;
   font-size: 1.3rem; font-weight: 400;
@@ -569,7 +582,20 @@ footer { border-top:1px solid var(--border); padding:1.75rem 4rem; display:flex;
 </footer>
 
 <script>
-function setLang(lang) {
+   function filterCards(cat) {
+  document.querySelectorAll('.filter-btn').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('onclick') === "filterCards('" + cat + "')");
+  });
+  document.querySelectorAll('#articles-grid .card').forEach(function(card) {
+    if (cat === 'all') {
+      card.classList.remove('hidden');
+    } else {
+      var cats = (card.getAttribute('data-cat') || '').split(' ');
+      card.classList.toggle('hidden', cats.indexOf(cat) === -1);
+    }
+  });
+}
+    function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(function(el) {
     el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
   });
